@@ -1,6 +1,7 @@
 # Alice-O2 framework
 ## Table of contents
 * [General information](#general-information)
+* [FemtoUniverse](#femtouniverse)
 * [Git](#git)
 * [Notes](#notes)
 ## Genral information
@@ -8,7 +9,13 @@ This repository is dedicated to the O2 software.
 
 Here is the link to the O2 Analysis Framework Documentation: https://aliceo2group.github.io/analysis-framework/.
 
+## FemtoUniverse
+FemtoUniverse is a part of the O2 framework, the code can be found in the `O2Physics/PWGCF` folder.
+
+It is used and developed for femtoscopy and angular correlations.
+
 ## Git
+Git guide: https://github.com/git-guides
 ### Branches
 * `git checkout -b new-branch-name` -> Use to create a new branch.
   
