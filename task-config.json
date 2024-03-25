@@ -9,7 +9,7 @@
         "step-value-enumeration": "1",
         "aod-file": "/home/katgwi/run-producer-femtoUniverse/FemtoAO2D.root"
     },
-    "femtouniverse-pair-task-track-d0": {
+    "femtouniverse-pair-task-track-track": {
         "ConfTrackChoice": "1",
         "ConfNsigmaCombinedKaon": "3",
         "ConfNsigmaTPCKaon": "3",
@@ -125,11 +125,12 @@
         "ConfNEventsMix": "5",
         "ConfIsCPR": "true",
         "ConfCPRPlotPerRadii": "false",
-        "processSameEvent": "false",
+        "processD0mesons": "true",
+        "processSideBand": "true",
+        "processSameEvent": "true",
         "processSameEventMC": "false",
-        "processMixedEvent": "false",
-        "processMixedEventMC": "false",
-        "processD0mesons": "true"
+        "processMixedEvent": "true",
+        "processMixedEventMC": "false"        
     },
     "internal-dpl-injected-dummy-sink": "",
     "internal-dpl-aod-global-analysis-file-sink": ""
