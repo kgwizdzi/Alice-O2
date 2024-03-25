@@ -7,7 +7,7 @@
 export alien_CLOSE_SE=ALICE::GSI::SE2
 # export alien_CLOSE_SE=ALICE::FZK::SE
 
-#ConfigFile="./config-hf.json"
+#ConfigFile="./dpl-config-HL.json"
 ConfigFile="./prod-Run3.json"
 
 Prefix="D0-pass4-"
@@ -40,6 +40,7 @@ Start=$(date '+%s')
     o2-analysis-track-to-collision-associator -b --configuration json://$ConfigFile |
     o2-analysis-hf-track-index-skim-creator -b --configuration json://$ConfigFile |
     o2-analysis-hf-candidate-creator-2prong -b --configuration json://$ConfigFile |
+    o2-analysis-hf-pid-creator -b --configuration json://$ConfigFile |
     o2-analysis-hf-candidate-selector-d0 -b --configuration json://$ConfigFile |
     o2-analysis-cf-femtouniverse-producer -b --configuration json://$ConfigFile --aod-writer-resfile FemtoAO2D --aod-writer-keep AOD/FDPARTICLE/0,AOD/FDCOLLISION/0,AOD/FDEXTPARTICLE/0 #|
 

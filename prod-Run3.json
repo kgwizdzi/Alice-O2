@@ -7,7 +7,7 @@
         "start-value-enumeration": "0",
         "end-value-enumeration": "-1",
         "step-value-enumeration": "1",
-        "aod-file": "/home/katgwi/Downloads/AO2D.root"
+        "aod-file": "/home/katgwi/Downloads/AO2D-apass4.root"
     },
     "internal-dpl-aod-spawner": "",
     "bc-converter": "",
@@ -25,19 +25,26 @@
         "geoPath": "GLO\/Config\/GeometryAligned",
         "grpmagPath": "GLO\/Config\/GRPMagField",
         "mVtxPath": "GLO\/Calib\/MeanVertex",
-        "minPropagationDistance": "5",
+        "minPropagationDistance": "83.1",
         "processStandard": "false",
-        "processCovariance": "true"
+        "processCovariance":"true",
+        "processCovarianceMc":"false",
+        "useTrackTuner":"false",
+        "processCovarianceWithPID":"false",
+        "processStandardWithPID":"false"
     },
     "bc-selection-task": {
         "triggerBcShift": "999",
+        "ITSROFrameBorderMargin": "30",
+        "TimeFrameStartBorderMargin": "350",
+        "TimeFrameEndBorderMargin": "4000",
         "processRun2": "false",
         "processRun3": "true"
     },
     "event-selection-task": {
         "syst": "pp",
         "muonSelection": "0",
-        "customDeltaBC": "-1",
+        "customDeltaBC": "300",
         "isMC": "false",
         "processRun2": "false",
         "processRun3": "true"
@@ -98,10 +105,75 @@
     "multiplicity-table": {
         "doVertexZeq": "1",
         "populateMultExtra": "false",
-        "fractionOfEvents": "2",
         "processRun2": "false",
         "processRun3": "true",
         "processFT0": "false"
+    },
+    "centrality-table": {
+        "enabledTables": {
+          "labels_rows": [
+            "CentRun2V0Ms",
+            "CentRun2V0As",
+            "CentRun2SPDTrks",
+            "CentRun2SPDClss",
+            "CentRun2CL0s",
+            "CentRun2CL1s",
+            "CentFV0As",
+            "CentFT0Ms",
+            "CentFT0As",
+            "CentFT0Cs",
+            "CentFDDMs",
+            "CentNTPVs"
+          ],
+          "labels_cols": [
+            "Enable"
+          ],
+          "values": [
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ],
+            [
+              "-1"
+            ]
+          ]
+        },
+        "ccdburl": "http:\/\/alice-ccdb.cern.ch",
+        "ccdbpath": "Centrality\/Estimators",
+        "genname": "",
+        "doNotCrashOnNull": "false",
+        "embedINELgtZEROselection": "false",
+        "processRun2": "false",
+        "processRun3": "true"
     },
     "ft0-corrected-table": "",
     "tof-event-time": {
@@ -600,6 +672,19 @@
         "processNo2And3Prongs": "false",
         "process2And3Prongs": "true"
     },
+    "hf-pid-creator": {
+        "processTinyKa":"0",
+        "processTinyEl":"0",
+        "processTinyMu":"0",
+        "processTinyPr":"0",
+        "processFullPr":"0",
+        "processTinyPi":"0",
+        "processFullKa":"1",
+        "processDummy":"0",
+        "processFullEl":"0",
+        "processFullMu":"0",
+        "processFullPi":"1"
+    },
     "hf-candidate-creator-2prong": {
         "propagateToPCA": "true",
         "useAbsDCA": "false",
@@ -628,7 +713,7 @@
         "ptPidTofMax": "10",
         "nSigmaTofMax": "3",
         "nSigmaTofCombinedMax": "5",
-        "usePidTpcAndTof": "false",
+        "usePidTpcAndTof": "true",
         "keepOnlySidebandCandidates": "false",
         "distanceFromD0MassForSidebands": "0.15",
         "binsPt": {
@@ -748,9 +833,9 @@
         "ConfEvtTriggerCheck": "true",
         "ConfEvtTriggerSel": "0",
         "ConfEvtOfflineCheck": "true",
-        "ConfIsActivateV0": "true",
-        "ConfIsActivatePhi": "true",
-        "ConfMCTruthAnalysisWithPID": "true",
+        "ConfIsActivateV0": "false",
+        "ConfIsActivatePhi": "false",
+        "ConfMCTruthAnalysisWithPID": "false",
         "ConfMCTruthPDGCodes": {
             "values": [
                 "211",
@@ -761,7 +846,7 @@
             ]
         },
         "ConfTrkRejectNotPropagated": "false",
-        "ConfTrkPDGCode": "2212",
+        "ConfTrkPDGCode": "211",
         "ConfPtLowFilterCut": "0.140000001",
         "ConfPtHighFilterCut": "5",
         "ConfEtaFilterCut": "0.800000012",
@@ -857,7 +942,6 @@
         "ConfTrkPIDnSigmaOffsetTOF": "0",
         "ConfTrkPIDspecies": {
             "values": [
-                "1",
                 "2",
                 "3",
                 "4"
@@ -1049,6 +1133,7 @@
                 "3"
             ]
         },
+        "ConfD0D0barMinPt": "0.4",
         "ConfNsigmaCombinedKaon": "3",
         "ConfNsigmaTPCKaon": "3",
         "ConfNsigmaTPCTOFKaon": "true",
@@ -1063,7 +1148,9 @@
         "processTrackPhiData": "false",
         "processTrackV0": "false",
         "processTrackD0mesonData": "true",
-        "processTrackMCTruth": "false"
+        "processTrackMCTruth": "false",
+        "processTrackCentRun2Data": "false",
+        "processTrackCentRun3Data": "false"
     },
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",
