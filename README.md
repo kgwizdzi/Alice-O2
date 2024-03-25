@@ -19,15 +19,18 @@ The task `femtoUniverseProducerTask.cxx`, which can be found in the `O2Physics/P
 FemtoUniverse producer from the input file `AO2D.root` creates a file with the selected information, which is saved in the output file called `FemtoAO2D.root`.
 In the FemtoUniverse producer we can choose which particles we want to save. We can save tracks (kaons, pions, protons), V0s, phi and charmed mesons.
 To save the selected particles you need to run the corresponding process, for example, to save charmed mesons and tracks you need to run the `processTrackD0mesonData` process.
+
 To run the `femtoUniverseProducerTask.cxx` locally, you need the following files:
 * `prod.sh`,
 * `prod-Run3.json`.
+
 Note: On my github, they are prepared to save charmed mesons and tracks. 
 
 If we already have a file with stored particles. Then we can run the task with the analysis we want to perform (in this case, it is the analysis of angular correlations).
 
 ### Angular correlations of charmed mesons
 The task dedicated to this analysis is `femtoUniversePairTaskTrackD0.cxx`.
+
 To test the code locally, two files are needed:
 * `run-D0-task.sh`,
 * `task-config.json`.
